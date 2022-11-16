@@ -1,0 +1,20 @@
+:root{
+    --rows: 0;
+    --cols: 0;
+}
+
+main{
+    background-image: none;
+    background-color: rgb(37,37,37);
+    display: grid;
+    grid-template-rows: repeat(var(--rows), 1fr);
+    grid-template-columns: repeat(var(--cols), 1fr);
+    gap: 1px;
+}
+
+.cell{
+    margin: 0;
+    background-color: green;
+    width: 30px;
+    aspect-ratio: 1/1;
+}

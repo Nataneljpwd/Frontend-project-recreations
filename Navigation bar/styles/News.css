@@ -1,0 +1,137 @@
+*{
+    color:whitesmoke;
+}
+
+
+.show {
+    display: inline-block;
+}
+.container[data-open="true"] a:nth-child(3)>div::after {
+    content: "Home";
+}
+
+.hide {
+    display: none;
+}
+
+.card-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-group {
+    width: 20vw;
+    aspect-ratio: 5/7;
+    border-radius: 2vw;
+}
+
+.big-card {
+    width: 20vw;
+    border-radius: 2vw;
+}
+
+.little-card {
+    width: 6vw;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    aspect-ratio: 5/7;
+    position: absolute;
+    transition: all 500ms cubic-bezier(.37, .89, .75, .85);
+}
+
+h3 {
+    text-align: center;
+    font-weight: 800;
+    margin: 1em 0 1em 0;
+    text-decoration: underline;
+}
+
+img {
+    margin: 1em 0;
+    width: 100%;
+    aspect-ratio: 7/5;
+    border-radius: 2em;
+}
+
+.card-group.show .card:nth-child(1) {
+    background-image: url("../images/scandal-small1.jpg");
+    background-size: cover;
+}
+
+.card-group.show .card:nth-child(2) {
+    transform: translate(-10%, 5%) rotate(-4deg);
+    background-color: rgba(105, 0, 0, 0.856);
+}
+
+
+.card-group.show .card:nth-child(3) {
+    background-image: url("../images/scandal-small2.jpg");
+    background-size: cover;
+}
+
+.card-group.show .card:nth-child(4) {
+    transform: translateX(-5%) rotate(-1deg);
+    background-color: rgba(78, 81, 255, 0.849);
+}
+
+.card-group.show .card:nth-child(5) {
+    background-image: url("../images/scandal-small3.jpg");
+    background-size: cover;
+}
+
+.card-group.show .card:nth-child(6) {
+    transform: translateX(5%)rotate(1deg);
+    background-color: #d42000ea;
+}
+
+.card-group.show .card:nth-child(7) {
+    background-image: url("../images/scandal-small4.jpg");
+    background-size: cover;
+}
+
+.card-group.show .card:nth-child(8) {
+    transform: translate(10%, 5%) rotate(4deg);
+    background-color: rgba(31, 5, 104, 0.87);
+}
+
+
+.card-group.show:hover .card:nth-child(1) {
+    transform: translate(-320%, -280%) rotate(15deg);
+}
+
+.show.card-group:hover .card:nth-child(2) {
+    transform: translate(-90%, 10%) rotate(-10deg);
+}
+
+.card-group.show:hover .card:nth-child(3) {
+    transform: translate(320%, -280%) rotate(-15deg);
+}
+
+.card-group.show:hover .card:nth-child(4) {
+    transform: translateX(-30%) rotate(-5deg);
+}
+
+.card-group.show:hover .card:nth-child(5) {
+    transform: translate(-320%, 280%) rotate(-15deg);
+}
+
+.card-group.show:hover .card:nth-child(6) {
+    transform: translateX(30%) rotate(5deg);
+}
+
+.card-group.show:hover .card:nth-child(7) {
+    transform: translate(320%, 280%) rotate(15deg);
+}
+
+.card-group.show:hover .card:nth-child(8) {
+    transform: translate(90%, 10%) rotate(10deg);
+}
