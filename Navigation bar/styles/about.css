@@ -3,18 +3,38 @@
     --cols: 0;
 }
 
-main{
+.grid-container{
+    width: 100vw;
+    height: 100vh;
     background-image: none;
     background-color: rgb(37,37,37);
     display: grid;
     grid-template-rows: repeat(var(--rows), 1fr);
     grid-template-columns: repeat(var(--cols), 1fr);
-    gap: 1px;
+    gap: 2px;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #4e00b4, #00bd94, #3b9300, #bfb500, #eb5712,#4e00b4);
+    animation: gradient 5s linear infinite;
+    background-size: 200vw;
 }
-
+main{
+    filter:none;
+}
 .cell{
     margin: 0;
-    background-color: green;
+    background-color: rgb(37,37,37);
     width: 30px;
     aspect-ratio: 1/1;
+    opacity: 1;
+    transition: opacity 200ms;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 200% 50%;
+	}
 }
