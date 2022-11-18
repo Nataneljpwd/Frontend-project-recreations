@@ -25,10 +25,8 @@ main{
 .cell{
     margin: 0;
     background-color: rgb(37,37,37);
-    width: 30px;
     aspect-ratio: 1/1;
-    opacity: 1;
-    transition: opacity 200ms;
+    transition: opacity 200ms ease;
 }
 @keyframes gradient {
 	0% {
