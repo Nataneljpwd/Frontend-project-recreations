@@ -1,38 +1,125 @@
-:root{
+@import url('https://fonts.cdnfonts.com/css/lucida-handwriting-std');
+
+:root {
     --rows: 0;
     --cols: 0;
 }
 
-.grid-container{
+* {
+    color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    font-family: 'Lucida Handwriting Std', sans-serif;
+}
+
+.grid-container {
     width: 100vw;
     height: 100vh;
     background-image: none;
-    background-color: rgb(37,37,37);
+    background-color: rgb(37, 37, 37);
     display: grid;
     grid-template-rows: repeat(var(--rows), 1fr);
     grid-template-columns: repeat(var(--cols), 1fr);
     gap: 2px;
-    z-index: 10;
+    z-index: 3;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, #4e00b4, #00bd94, #3b9300, #bfb500, #eb5712,#4e00b4);
+    background: linear-gradient(to right, #4e00b4, #00bd94, #3b9300, #bfb500, #eb5712, #4e00b4);
     animation: gradient 5s linear infinite;
     background-size: 200vw;
 }
-main{
-    filter:none;
+
+main {
+    position: relative;
+    filter: none;
+    background: none;
+    z-index: 4;
 }
-.cell{
+
+#btn {
+    z-index: 5;
+}
+
+/*
+*/
+.cell {
     margin: 0;
-    background-color: rgb(37,37,37);
+    background-color: rgb(37, 37, 37);
     aspect-ratio: 1/1;
     transition: opacity 200ms ease;
 }
+
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	100% {
-		background-position: 200% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.container[data-open="true"] a:nth-child(7)>div::after {
+    content: "Home";
+}
+
+
+
+main>h1 {
+    transition: top 600ms ease;
+    position: absolute;
+    font-size: 3em;
+}
+
+main>h2 {
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+main>p {
+    font-size: 1.5em;
+}
+main>p,
+main>h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 500ms ease, opacity 200ms ease;
+    display: inline-block;
+}
+
+main[data-show="false"] p,
+ main[data-show="false"] h2{
+    opacity: 0;
+}
+
+main[data-show="false"]>h1 {
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main[data-show="true"]>h1 {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+main[data-show="true"]>h2 {
+    opacity: 1;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+main[data-show="true"]>p {
+    opacity: 1;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
