@@ -24,12 +24,15 @@
 }
 
 .card-group {
-    width: 20vw;
+    max-width: 33vw;
+    width: 18vw;
+    
     aspect-ratio: 5/7;
     border-radius: 2vw;
 }
 
 .big-card {
+    max-width: 33vw;
     width: 20vw;
     border-radius: 2vw;
 }
@@ -105,7 +108,7 @@ img {
 
 
 .card-group.show:hover .card:nth-child(1) {
-    transform: translate(-320%, -280%) rotate(15deg);
+    transform: translate(-320%, -240%) rotate(15deg);
 }
 
 .show.card-group:hover .card:nth-child(2) {
@@ -113,7 +116,7 @@ img {
 }
 
 .card-group.show:hover .card:nth-child(3) {
-    transform: translate(320%, -280%) rotate(-15deg);
+    transform: translate(320%, -240%) rotate(-15deg);
 }
 
 .card-group.show:hover .card:nth-child(4) {
@@ -121,7 +124,7 @@ img {
 }
 
 .card-group.show:hover .card:nth-child(5) {
-    transform: translate(-320%, 280%) rotate(-15deg);
+    transform: translate(-320%, 240%) rotate(-15deg);
 }
 
 .card-group.show:hover .card:nth-child(6) {
@@ -129,9 +132,29 @@ img {
 }
 
 .card-group.show:hover .card:nth-child(7) {
-    transform: translate(320%, 280%) rotate(15deg);
+    transform: translate(320%, 240%) rotate(15deg);
 }
 
 .card-group.show:hover .card:nth-child(8) {
     transform: translate(90%, 10%) rotate(10deg);
+}
+@media screen and (max-width: 1278px) {
+    .card-group{
+        width: 30vw;
+    }
+    .big-card{
+        width: 30vw;
+    }
+    .card-group.show:hover .card:nth-child(1) {
+        transform: translate(-320%, -360%) rotate(15deg);
+    }
+    .card-group.show:hover .card:nth-child(3) {
+        transform: translate(320%, -360%) rotate(-15deg);
+    }
+    .card-group.show:hover .card:nth-child(5) {
+        transform: translate(-320%, 360%) rotate(15deg);
+    }
+    .card-group.show:hover .card:nth-child(7) {
+        transform: translate(320%, 360%) rotate(-15deg);
+    }
 }

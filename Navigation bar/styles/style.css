@@ -1,3 +1,7 @@
+:root{
+    --x:0;
+    --y:0;
+}
 * {
     margin: 0;
     padding: 0;
@@ -166,6 +170,21 @@ content: "";
 }
 .container a:nth-child(2)>div{
     background-image: url("../images/how-to-play.jpg");
+}
+.follower{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    transition: opacity 500ms ease;
+    height: 5%;
+    width: auto;
+    opacity: 0;
+    fill: rgb(175, 143, 0);
+    transition-timing-function: ease-in-out;
+}
+body:hover .follower{
+    opacity: 1;
 }
 
 .container a:nth-child(3)>div{

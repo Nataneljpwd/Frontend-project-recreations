@@ -4,14 +4,16 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 
 let toggled=false;
+const main= document.querySelector("main");
 const grid = document.querySelector(".grid-container");
-let numRows = Math.floor(window.innerHeight / cellSize);
-let numCols = Math.floor(window.innerWidth / cellSize);
+var numRows = Math.floor(window.innerHeight / cellSize);
+var numCols = Math.floor(window.innerWidth / cellSize);
 grid.innerHTML = "";
     const createTile=(i)=>{
         const cell = document.createElement("div");
         cell.classList.add("cell");
         cell.style.opacity=toggled? "0":"1";
+        cell.style.width=cellSize+"px";
         cell.onclick= e => expand(i,numRows,numCols);
         return cell;
     }
@@ -20,9 +22,12 @@ grid.innerHTML = "";
   });
 grid.style.setProperty("--rows", numRows);
 grid.style.setProperty("--cols", numCols);
+
+
+
 window.addEventListener("resize", (e) => {
-    let numRows = Math.floor(window.innerHeight / cellSize);
-    let numCols = Math.floor(window.innerWidth / cellSize);
+    numRows = Math.floor(window.innerHeight / cellSize);
+    numCols = Math.floor(window.innerWidth / cellSize);
     grid.innerHTML = "";
     //for (let i = 0; i < numCols*numRows; i++) {
         //for (let j = 0; j < numCols; j++) {
@@ -35,13 +40,6 @@ window.addEventListener("resize", (e) => {
             //cell.addEventListener("click",expand(i,numRows,numCols));
         //}
     //}
-    const createTile=(i)=>{
-        const cell = document.createElement("div");
-        cell.classList.add("cell");
-        cell.style.opacity=toggled? "0":"1";
-        cell.onclick= e => expand(i,numRows,numCols);
-        return cell;
-    }
   Array.from(Array(numCols*numRows)).map((cell, index) => {
     grid.appendChild(createTile(index));
   });
@@ -60,17 +58,18 @@ window.addEventListener("resize", (e) => {
     //         });
     //     })
     // });
-    // grid.style.setProperty("--rows", numRows);
-    // grid.style.setProperty("--cols", numCols);
+    grid.style.setProperty("--rows", numRows);
+    grid.style.setProperty("--cols", numCols);
 
 });
 
 const expand = (index,numRows,numCols) => {
     toggled=!toggled;
+    main.dataset.show= main.dataset.show == "false" ? "true":"false";
   anime({
     targets: ".cell",
     opacity: toggled ? 0 : 1,
-    delay: anime.stagger(50, {
+    delay: anime.stagger(30, {
       grid: [numCols, numRows],
       from: index
     })
@@ -96,18 +95,3 @@ const expand = (index,numRows,numCols) => {
         }
     }*/
 }
-/*const runAsync = fn => {
-  const worker = new Worker(
-    URL.createObjectURL(new Blob([`postMessage((${fn})());`]), {
-      type: 'application/javascript; charset=utf-8'
-    })
-  );
-  return new Promise((res, rej) => {
-    worker.onmessage = ({ data }) => {
-      res(data), worker.terminate();
-    };
-    worker.onerror = err => {
-      rej(err), worker.terminate();
-    };
-  });
-};*/
