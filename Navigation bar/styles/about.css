@@ -9,10 +9,12 @@
     color: whitesmoke;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 span {
     font-family: 'Lucida Handwriting Std', sans-serif;
+    color: gold;
 }
 
 .grid-container {
@@ -28,7 +30,7 @@ span {
     top: 0;
     left: 0;
     background: linear-gradient(to right, #4e00b4, #00bd94, #3b9300, #bfb500, #eb5712, #4e00b4);
-    animation: gradient 5s linear infinite;
+    animation: gradient 10s linear infinite;
     background-size: 200vw;
 }
 
@@ -72,6 +74,7 @@ main>h1 {
     transition: top 600ms ease;
     position: absolute;
     font-size: 3em;
+    pointer-events: none;
 }
 
 main>h2 {
@@ -85,15 +88,19 @@ main>p {
 main>p,
 main>h2{
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: top 500ms ease, opacity 200ms ease;
+    transition: top 500ms ease;
     display: inline-block;
+    pointer-events: none;
+    width: 60vw;
+    max-width: 750px;
+    min-width: 500px;
 }
 
-main[data-show="false"] p,
- main[data-show="false"] h2{
+main[data-show="false"]>p,
+ main[data-show="false"]>h2{
     opacity: 0;
 }
 
@@ -105,21 +112,21 @@ main[data-show="false"]>h1 {
 }
 
 main[data-show="true"]>h1 {
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
 }
 main[data-show="true"]>h2 {
+    display: inline-block;
     opacity: 1;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 23%;
+    left: 50%;transform: translate(-50%, -50%);
     text-align: center;
-}
+ }
 main[data-show="true"]>p {
+    display: inline-block;
     opacity: 1;
-    top: 25%;
+    top: 55%;
     left: 50%;
-    transform: translateX(-50%);
     text-align: center;
 }

@@ -68,11 +68,6 @@ main {
     gap:5vw;
     overflow-x: scroll;
 }
-.follower{
-    transition: all 1.2s ease-out;
-    position: absolute;
-    z-index: 4;
-}
 
 a {
     display: inline-block;
@@ -177,11 +172,12 @@ content: "";
     top: 0;
     left: 0;
     transition: opacity 500ms ease;
-    height: 5%;
+    height: 6%;
     width: auto;
     opacity: 0;
     fill: rgb(175, 143, 0);
     transition-timing-function: ease-in-out;
+    pointer-events: none;
 }
 body:hover .follower{
     opacity: 1;
