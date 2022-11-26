@@ -64,8 +64,8 @@ window.addEventListener("resize", (e) => {
 });
 
 const expand = (index,numRows,numCols) => {
-    toggled=!toggled;
-    main.dataset.show= main.dataset.show == "false" ? "true":"false";
+  toggled=!toggled;
+  main.dataset.show= main.dataset.show == "false" ? "true":"false";
   anime({
     targets: ".cell",
     opacity: toggled ? 0 : 1,
