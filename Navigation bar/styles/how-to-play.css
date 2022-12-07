@@ -14,7 +14,7 @@ main{
 }
 .tutorial{
     width: 90vmax;
-    height: 80vmin;
+    height: 85vmin;
     position: relative;
     pointer-events: none;
     background-color: rgba(17,17,17,0.3);
@@ -64,6 +64,7 @@ main{
     z-index: 11;
     fill: rgb(255, 255, 255);
     transition-timing-function: ease-in-out;
+    pointer-events: none;
 }
 
 .prev{
