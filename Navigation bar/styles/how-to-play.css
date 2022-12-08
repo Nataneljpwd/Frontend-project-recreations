@@ -57,6 +57,9 @@ main{
     background-color: rgb(81, 132, 132);
     cursor: pointer;
 }
+.container[data-open="true"] a:nth-child(2)>div::after {
+    content: "Home";
+}
 .piece{
     height: calc((35vmax / 8) - 1vmax);
     aspect-ratio: 1;
@@ -75,4 +78,8 @@ main{
 }
 h1{
     font-size: 3em;
+}
+.text{
+    font-size: 1.5em;
+    margin-bottom: 0;
 }
