@@ -1,0 +1,187 @@
+:root{
+    --font-color:whitesmoke;
+    --element-bg-color:#292f3c;
+    --dark-element-color:transparent;
+    --border-r:1.5rem;
+    --vert-padding:2rem;
+    --hor-padding:3rem;
+    --text-width:25vw;
+    --text-height:3vh;
+    --btn-width:20vw;
+    --btn-height:2.8vh;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("../images/image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height:100vh;
+}
+
+.wrapper{
+    width:100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper form{
+    direction: rtl;
+    background-color: #000000a0;
+    padding: 2rem;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text{
+    pointer-events: all;
+    display: block;
+    border:2px solid rgb(0, 189, 186);
+    margin: 1rem 0px;
+    width:var(--text-width);
+    height:var(--text-height);
+    font-size: 1.4em;
+    border-radius: var(--border-r);
+    text-align: center;
+    background-color: var(--dark-element-color);
+    color: var(--font-color);
+    font-family: 'Trispace', sans-serif;
+}
+.text::placeholder{
+    color: var(--font-color);
+}
+
+
+p{
+    color: var(--font-color);
+    text-align: center;
+    font-family: 'Trispace', sans-serif;
+    font-size: 1.3em;
+}
+
+.lvl-txt{
+    text-align: center;
+    color:whitesmoke;
+    display: block;
+    font-size: 1.3em;
+    font-family: sans-serif;
+}
+.effect-wrapper{
+    position: relative;
+    pointer-events: none;
+}
+.effect-wrapper .effect{
+    /* border: 4px solid rgb(255, 247, 247); */
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + var(--hor-padding));
+    height: calc(100% + var(--vert-padding));
+    pointer-events: none;
+}
+.effect-wrapper .effect rect{
+    transition: stroke-dashoffset 800ms ease-in-out;
+    pointer-events: none;
+    width: var(--text-width);
+    height: var(--text-height);
+    fill:none;
+    stroke-width: 3px;
+    stroke: rgb(255, 255, 255);
+    x:calc(calc(var(--hor-padding) / 2) + 2px);
+    y:calc(var(--vert-padding) + 2px);
+    rx:var(--border-r);
+    stroke-linecap: round;
+    stroke-dasharray: 25 25;
+    opacity: 0;
+}
+.shaddow{
+    filter: blur(0.5vh);
+}
+.effect-wrapper:hover >.effect>rect{
+    stroke-dashoffset: 80;
+    animation: anim 800ms ease-in-out;
+}
+@keyframes anim{
+    0%{opacity: 0;}
+    25%{opacity:1;}
+    75%{opacity:1}
+    100%{opacity:0}
+}
+
+.btn-wrapper{
+    position: relative;
+    pointer-events: none;
+}
+.btn-wrapper .effect{
+    /* border: 4px solid rgb(255, 247, 247); */
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + var(--hor-padding));
+    height: calc(100% + var(--vert-padding));
+    pointer-events: none;
+}
+.btn-wrapper .effect rect{
+    transition: stroke-dashoffset 800ms ease-in-out;
+    pointer-events: none;
+    width: var(--btn-width);
+    height: var(--btn-height);
+    fill:none;
+    stroke-width: 3px;
+    stroke: rgb(255, 255, 255);
+    x:calc(var(--hor-padding) / 2);
+    y:calc(var(--vert-padding) - 2px);
+    rx:var(--border-r);
+    stroke-linecap: round;
+    stroke-dasharray: 25 25;
+    opacity: 0;
+}
+.btn-wrapper:hover>.effect>rect{
+    stroke-dashoffset: 80;
+    animation: anim 800ms ease-in-out;
+}
+.reset,
+.submit{
+    pointer-events: all;
+    display: block;
+    width: var(--btn-width);
+    font-size: 1.4em;
+    color: var(--font-color);
+    height:var(--btn-height);
+    border-radius: var(--border-r);
+    background-color: transparent;
+    border: 3px solid rgb(0,100,170);
+    margin:1vh 0;
+    box-sizing: border-box;
+    padding: 1rem 0.5rem;
+    text-align:center ;
+}
+
+.reset:hover,
+.submit:hover{
+    cursor: pointer;
+    color: var(--font-color);
+    background-color: #17597e;
+}
+
+.opening:not(input){
+    margin:0.5vh 0;
+}
+label.opening{
+    display: block;
+    color: var(--font-color);
+    font-size: 1.4em;
+}

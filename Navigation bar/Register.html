@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./styles/Register.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@200&display=swap" rel="stylesheet">
+        <title></title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- 
+            names"
+            username
+            mail
+            name1
+            surename
+            country
+            city
+            Bdate
+            level
+            openning
+            
+            -->
+            <form name="sign-in" autocomplete="off" action="insertUserToDB.jsp" method="post">
+                <div class="effect-wrapper">
+                    <input onchange="" type="textarea" name="username" placeholder="שם משתמש" class="text">
+                    <svg class="effect">
+                        <rect class="shaddow" pathLength="100"></rect>
+                        <rect class="line" pathLength="100"></rect>
+                    </svg>
+                </div>
+                <div class="effect-wrapper">
+                    <input type="email" name="mail" placeholder="מייל" class="text">
+                    <svg class="effect">
+                        <rect class="shaddow" pathLength="100"></rect>
+                        <rect class="line" pathLength="100"></rect>
+                    </svg>
+                </div>
+                <div class="effect-wrapper">
+                    <input type="textarea" name="name1" placeHolder="שם פרטי" class="text">
+                    <svg class="effect">
+                        <rect class="shaddow" pathLength="100"></rect>
+                        <rect class="line" pathLength="100"></rect>
+                    </svg>
+                </div>
+                <div class="effect-wrapper">
+                    <input type="textarea" name="surename" placeHolder="שם משפחה" class="text" /><br>
+                    <svg class="effect">
+                        <rect class="shaddow" pathLength="100"></rect>
+                        <rect class="line" pathLength="100"></rect>
+                    </svg>
+                </div>
+                <div class="effect-wrapper">
+                    <input type="textarea" name="country" placeholder="מדינה" class="text inline">
+                    <svg class="effect">
+                        <rect class="shaddow" pathLength="100"></rect>
+                        <rect class="line" pathLength="100"></rect>
+                    </svg>
+                </div>
+                <div class="effect-wrapper">
+                    <input type="textarea" name="city" placeholder="עיר" class="text inline" >
+                    <svg class="effect">
+                        <rect class="shaddow" pathLength="100"></rect>
+                        <rect class="line" pathLength="100"></rect>
+                    </svg>
+                </div>
+                <p style="font-weight: bolder">תאריך לידה</p>
+                <input type="date" name="Bdate" placeholder="תאריך" class="text">
+                <input type="radio" name="level" class="lvl" value="beginner"><label class="lvl-txt">מתחיל 0-800</label>
+                <input type="radio" name="level" class="lvl" value="intermediate"><label class="lvl-txt">מתקדם 800-1200</label>
+                <input type="radio" name="level" class="lvl" value="advenced"><label class="lvl-txt">מקצועי 1200+</label>
+                <p style="margin-top: 2vh;font-weight: bolder">פתיחות</p>
+                <input type="checkbox" name="openning" class="opening"><label class="opening" dir="ltr" value="Carro khan">Carro khan</label>
+                <input type="checkbox" name="openning" class="opening"><label class="opening" dir="ltr" value="London system">London system</label>
+                <input type="checkbox" name="openning" class="opening"><label class="opening" dir="ltr" value="Kings indian attack">Kings indian attack</label>
+                <input type="checkbox" name="openning" class="opening"><label class="opening" dir="ltr"value="Fried liver">Fried liver</label>
+                <div class="btn-wrapper">
+                    <input type="submit" class="submit" value="הרשם">
+                    <svg class="effect">
+                        <rect class="shaddow" pathLength="100"></rect>
+                        <rect class="line" pathLength="100"></rect>
+                    </svg>
+                </div>
+                <div class="btn-wrapper">
+                    <input type="reset" class="reset" value="מחק הכל">
+                    <svg class="effect">
+                        <rect class="shaddow" pathLength="100"></rect>
+                        <rect class="line" pathLength="100"></rect>
+                    </svg>
+                </div>
+            </form>
+            
+        </div>
+        <script src="Register.js"></script>
+    </body>
+</html>
